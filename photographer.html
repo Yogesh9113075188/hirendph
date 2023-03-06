@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="./public/css/main.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-500x500.png">
+    <!-- Icons import -->
+    <script src="https://kit.fontawesome.com/2698c4b3a8.js" crossorigin="anonymous"></script>
+    <!-- Google fonts import -->
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Hirend</title>
+  </head>
+
+  <body id="body" class="main-wrapper">
+
+    <header class="site-header site-header--photographerPage" aria-label="En-tête du site web" aria-hidden="false">
+      <nav class="site-header__nav website-header-nav--photographerPage">
+        <a href="./index.html">
+          <img class="logo" src="./assets/logo/logo.jpeg" alt="Hirend Logo" />
+        </a>
+      </nav>
+    </header>
+    
+    <!--Lightbox-->
+    <div id="lightbox" role="dialog" aria-label="lightbox closeup for images and videos portfolio">
+      <div class="lightBox__arrow lightBox__previous-arrow">
+        <button aria-label="previous image" class="fas fa-angle-left"></button>
+      </div>
+      <div class="close-slider">
+        <div id="message-nav">
+          <div id="message-text">
+          Hi
+          </div>
+          <div class="lightBox__content">
+          </div>
+        </div>
+        <div class="lightBox__closeBtn">
+          <button aria-label="close dialog" class="lightBox__close fas fa-times"></button>
+        </div>
+      </div>
+      <div class="lightBox__arrow lightBox__next-arrow">
+          <button aria-label="next image" class="fas fa-angle-right"></button>
+      </div>
+    </div>
+
+    <main id="main">
+
+      <!-- Drop down Menu -->
+      <section class="dropDownMenu menu-overlay">
+        <div class="menu">
+          <span tabindex="0" id="dropDownMenu-title">
+            Sort by
+          </span>
+          <div class="menu-wrapper">
+            <div class="dropDownMenu__button-wrapper">
+              <button 
+                tabindex="0"
+                class="dropDownBtn sort-option"
+                aria-haspopup="listbox" 
+                aria-label="drop-down-button">
+                Popularity
+              </button>
+              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"/>
+            </div>
+          </div>
+          <div 
+            id="myDropDownList" 
+            class="dropDownList"
+            role="listbox" 
+            aria-label="menu-list-area"
+            tabindex="-1"
+            aria-activedescendant="likes">
+            <button 
+              data-sort="likes"
+              role="option" 
+              aria-label="likes"
+              aria-selected="true"
+              class="activeOption sort-option sort-list">
+              Popularity
+            </button> 
+            <button 
+              role="option" 
+              data-sort="date"
+              class="sort-option sort-list"
+              aria-selected="false"
+              aria-label="date">
+              Date
+            </button>
+            <button 
+              role="option"  
+              data-sort="title"
+              aria-selected="false"
+              class="sort-option sort-list"
+              aria-label="title">
+              Title
+            </button>
+          </div>
+        </div>
+			</section>
+      
+      <!-- Portfolio Gallery -->
+      <section id="photographer-gallery" class="photographer-gallery sr-container" aria-label="header for photographer's photos and videos gallery">
+        <h2 class="sr-container__gallery" id="photographer-gallery__header">Photography gallery</h2>
+      </section>
+
+    </main>
+
+    <!-- Card Info Insert with total likes and Price -->
+    <aside class="card-insert">
+    </aside>
+
+    <!-- Contact Form -->
+		<section id="contact-form" role="dialog" class="modal modal--close contact-modal overlay" aria-hidden="true">
+      <div id="form-content" role="group" class="form-content" aria-label="dialog-headline" tabindex="-1">
+        <header tabindex="0" id="form-title" aria-hidden="false" class="form-header">
+          <h2 id="modal-title" class="form-header__heading"> 
+          Book an appointment
+          <br>
+          <span id="form-photographer-name"></span>
+          </h2>
+          <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
+              <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
+          </button>
+        </header>
+        <form 
+        action="#" 
+        method="post" 
+        id="contactForm" 
+        aria-hidden="true" 
+        class="contact-form sr-container" 
+        novalidate>
+          <!-- First, Last name, email, message labels and inputs -->
+          <div id="contactDataFirstName" class="contactData">
+            <label aria-label="first-name-label" class="contactData__label" for="firstName-input">First Name</label>
+            <input name="firstName" type="text" class="contactData__input" placeholder="Example - Swara" aria-label="First name" id="firstName-input" required/>
+            <br>
+            <span id="first_error" class="error"></span>
+          </div>
+          <div id="contactDataLastName" class="contactData">
+            <label aria-label="last-name-label" class="contactData__label" for="lastName-input">Last Name</label>
+            <input name="lastName" type="text" class="contactData__input" placeholder="Example- Kapoor" aria-label="Last name" id="lastName-input" required/>
+            <br>
+            <span id="last_error" class="error"></span>
+          </div>
+          <div id="contactDataEmail" class="contactData contactData__email">
+            <label aria-label="email-label" class="contactData__label" for="email-input">Please enter your Email id</label>
+            <input name="email" type="email" class="contactData__input" aria-label="Email" id="email-input" placeholder="Example - swara@gmail.com" required/>
+            <br>
+            <span id="email_error" class="error"></span>
+          </div>
+          <div id="contactDataMessage" class="contactData contactData__message">
+            <label aria-label="message-label" class="contactData__label" for="message-input">Specify the event and other details for the photographer</label>
+            <textarea name="message" cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Example - Outdoor wedding photography, special shots for couple needed, both colour and black and white" id="message-input" required></textarea>
+            <span id="message_error" class="error"></span>
+          </div>
+          <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- JS files integration -->
+    <script type="module" src="./scripts/pages/photographer.js"></script>
+  </body>
+</html>

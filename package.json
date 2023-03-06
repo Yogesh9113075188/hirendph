@@ -1,0 +1,25 @@
+{
+    "name": "fisheye",
+    "version": "1.0.0",
+    "description": "Case Study 6 - OpenClassrooms",
+    "main": "index.js",
+    "type": "module",
+    "devDependencies": {
+      "eslint": "^8.18.0"
+    },
+    "scripts": {
+      "sass": "sass --watch ./sass/main.scss:./public/css/main.css",
+      "prefix": "postcss ./public/css/main.css --use autoprefixer -d ./css/prefixed/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022.git"
+    },
+    "author": "Filiz Hakan",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022/issues"
+    },
+    "homepage": "https://github.com/FilizHakan/FilizHakan_6_Fisheye_02052022#readme"
+
+  }
